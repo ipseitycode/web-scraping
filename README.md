@@ -58,9 +58,9 @@ Em `.agent/skills/` ficam os **agentes responsáveis pelo ciclo de vida de um m�
 
 | Agente | Função |
 |--------|--------|
-| `agent-creator`   | Cria o módulo completo a partir do `MAP.md` e das regras |
-| `agent-validator` | Valida se o módulo respeita todos os contratos definidos |
-| `agent-broker`    | Coordena o fluxo entre os demais agentes |
+| `agent-creator`   | Escreve o codigo do modulo completo a partir do `MAP.md` e das regras |
+| `agent-validator` | Valida se o codigo gerado pelo `agent-creator` não tem erros ou incosistências - reporta se houver erros |
+| `agent-broker`    | Corrige codigo se o  `agent-validator` reportar |
 
 O fluxo recomendado para criação de um módulo está em `devtools/docs/ROADMAP.md` e divide o trabalho em três blocos:
 
@@ -166,7 +166,7 @@ X-API-Key: sua_chave_aqui
 Toda a documentação técnica do projeto fica em `devtools/docs/`:
 
 - **`devtools/docs/visao-geral.md`** — documento mestre. Cobre arquitetura, contratos de cada etapa, regras estruturais, fluxo completo do POST ao JSON, regras de negócio e instruções para adicionar novos módulos e domínios.
-- **`devtools/docs/ROADMAP.md`** — passo a passo (Planejamento → Exploração → Definição) para criar um módulo do zero, pronto para ser consumido por um agente de IA.
+- **`devtools/docs/ROADMAP.md`** — passo a passo (Planejamento → Exploração → Definição) para criar um módulo do zero, pronto para ser consumido por um agente de IA (em paralelo, recomenda-se ver os videos da playlist para entender fluxo agêntico).
 - **`{dominio}/{modulo}/MAP.md`** — documento de scraping de cada módulo. Detalha identidade, dados, fonte, seletores, paginação, cache, exceptions e contrato de payload.
 
 Para entender o projeto **na prática**, a playlist no YouTube traz mais de **5 horas de gravação** comentando tudo:
